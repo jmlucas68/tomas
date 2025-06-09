@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santo Tomás de Aquino - Pensamiento Filosófico-Teológico</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(-20px, -20px) rotate(1deg); }
+            50% { transform: translate(20px, -10px) rotate(-1deg); }
+            75% { transform: translate(-10px, 20px) rotate(1deg); }
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .date {
+            font-size: 1.1em;
+            margin-top: 10px;
+            opacity: 0.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, transparent, rgba(102, 126, 234, 0.1));
+        }
+
+        nav a:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 3px;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+            border-left: 4px solid #764ba2;
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #667eea;
+            position: relative;
+        }
+
+        .obras-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .obra-card {
+            background: linear-gradient(135deg, #f8f9ff, #e8ecff);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .obra-card:hover {
+            transform: translateY(-3px);
+            border-color: #667eea;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+        }
+
+        .obra-title {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+            margin: 30px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 30px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 45%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: auto;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 15px;
+            height: 15px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #667eea;
+        }
+
+        .timeline-item:nth-child(odd)::before {
+            right: -35px;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -35px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; }
+            .section { padding: 25px; }
+            nav ul { flex-direction: column; align-items: center; }
+            .timeline::before { left: 20px; }
+            .timeline-item { width: calc(100% - 60px); margin-left: 40px !important; }
+            .timeline-item::before { left: -35px !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Santo Tomás de Aquino</h1>
+            <p class="subtitle">Doctor Angélico - Síntesis del Pensamiento Occidental</p>
+            <p class="date">1225-1274</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#influencias">Influencias</a></li>
+                <li><a href="#metafisica">Metafísica</a></li>
+                <li><a href="#teologia">Teología</a></li>
+                <li><a href="#antropologia">Antropología</a></li>
+                <li><a href="#etica">Ética</a></li>
+                <li><a href="#politica">Política</a></li>
+                <li><a href="#obras">Obras</a></li>
+                <li><a href="#influencia">Influencia</a></li>
+            </ul>
+        </nav>
+
+        <section id="influencias" class="section">
+            <h2>Influencias Recibidas</h2>
+            <p>La formación intelectual de Aquino se nutrió de múltiples fuentes que configuraron su síntesis única entre filosofía y teología cristiana.</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Aristóteles</h3>
+                    <p>La influencia más determinante. De él adoptó el método filosófico, la lógica, la metafísica del ser y la ética de las virtudes. Conoció sus obras principalmente a través de traducciones y comentarios árabes.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>San Agustín</h3>
+                    <p>La tradición patrística cristiana le proporcionó el marco teológico fundamental, aunque Tomás se alejó del platonismo agustiniano para abrazar el aristotelismo.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Pensadores Árabes y Judíos</h3>
+                    <p>Averroes, Avicena, Maimónides, Al-Farabi y Al-Ghazali enriquecieron su comprensión de problemas metafísicos y teológicos.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Alberto Magno</h3>
+                    <p>Su maestro dominico le transmitió el interés por la filosofía natural aristotélica y el método escolástico.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="metafisica" class="section">
+            <h2>Metafísica y Teoría del Ser</h2>
+            <div class="highlight">
+                <p>Tomás desarrolló una metafísica del ser basada en la distinción fundamental entre <strong>esencia y existencia</strong>. En todos los seres creados la existencia es un acto que actualiza la esencia, mientras que solo en Dios esencia y existencia se identifican.</p>
+            </div>
+            
+            <h3>Conceptos Fundamentales</h3>
+            <p>La doctrina del "esse" (ser/existir) como acto de todos los actos constituye el núcleo de su metafísica. Estableció también la analogía del ser, según la cual el concepto de ser se predica de manera análoga de Dios y las creaturas, evitando tanto el univocismo como el equivocismo.</p>
+            
+            <p>Esta innovación permitió mantener tanto la trascendencia divina como la posibilidad de un conocimiento verdadero de Dios a partir de las creaturas, fundamentando así toda su teología natural.</p>
+        </section>
+
+        <section id="teologia" class="section">
+            <h2>Teología Natural</h2>
+            <p>Su teología natural representa uno de los logros más notables de la síntesis tomista, culminando en las famosas demostraciones racionales de la existencia de Dios.</p>
+            
+            <h3>Las Cinco Vías</h3>
+            <div class="obras-grid">
+                <div class="obra-card">
+                    <div class="obra-title">Primera Vía: Del Movimiento</div>
+                    <p>Todo lo que se mueve es movido por otro. Es necesario llegar a un primer motor inmóvil: Dios.</p>
+                </div>
+                <div class="obra-card">
+                    <div class="obra-title">Segunda Vía: Causa Eficiente</div>
+                    <p>Toda causa eficiente es causada por otra. Debe existir una primera causa eficiente: Dios.</p>
+                </div>
+                <div class="obra-card">
+                    <div class="obra-title">Tercera Vía: Contingencia</div>
+                    <p>Los seres contingentes requieren un ser necesario que les dé existencia: Dios.</p>
+                </div>
+                <div class="obra-card">
+                    <div class="obra-title">Cuarta Vía: Grados de Perfección</div>
+                    <p>Los grados de perfección implican un ser sumamente perfecto: Dios.</p>
+                </div>
+                <div class="obra-card">
+                    <div class="obra-title">Quinta Vía: Gobierno del Mundo</div>
+                    <p>El orden y finalidad del universo requieren una inteligencia ordenadora: Dios.</p>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <p>Su concepto de Dios como <strong>"Ipsum Esse Subsistens"</strong> (el Ser mismo subsistente) representa una síntesis original entre la filosofía aristotélica y la revelación cristiana.</p>
+            </div>
+        </section>
+
+        <section id="antropologia" class="section">
+            <h2>Antropología Filosófica</h2>
+            <p>Tomás defendió la unidad sustancial del ser humano contra las teorías dualistas de su época, desarrollando una antropología que integra tanto la dimensión corporal como espiritual del hombre.</p>
+            
+            <h3>Unidad Psicosomática</h3>
+            <p>El alma humana es forma sustancial del cuerpo, pero al ser intelectual, trasciende la materia y es inmortal. Esta posición le permitió mantener tanto la unidad psicosomática como la supervivencia personal después de la muerte.</p>
+            
+            <h3>Teoría del Conocimiento</h3>
+            <div class="highlight">
+                <p>Su teoría del conocimiento, basada en la abstracción a partir de los sentidos, establece que <strong>todo conocimiento humano comienza por los sentidos</strong>, pero la razón puede elevarse hasta verdades universales e incluso hasta cierto conocimiento de Dios.</p>
+            </div>
+            
+            <p>Esta epistemología aristotélica moderada evita tanto el empirismo extremo como el racionalismo puro, estableciendo un equilibrio que respeta tanto la experiencia sensible como la capacidad abstractiva del intelecto.</p>
+        </section>
+
+        <section id="etica" class="section">
+            <h2>Ética y Filosofía Moral</h2>
+            <p>Su ética se fundamenta en la ley natural, concebida como participación de la ley eterna divina en la criatura racional.</p>
+            
+            <h3>Ley Natural</h3>
+            <p>Los principios morales básicos pueden ser conocidos por la razón natural, aunque la revelación los perfecciona y completa. Esta doctrina estableció las bases de gran parte de la tradición moral occidental.</p>
+            
+            <h3>Teoría de las Virtudes</h3>
+            <div class="obras-grid">
+                <div class="obra-card">
+                    <div class="obra-title">Virtudes Cardinales</div>
+                    <p><strong>Prudencia</strong> - rectitud del juicio práctico<br>
+                    <strong>Justicia</strong> - dar a cada uno lo suyo<br>
+                    <strong>Fortaleza</strong> - firmeza ante las dificultades<br>
+                    <strong>Templanza</strong> - moderación en los placeres</p>
+                </div>
+                <div class="obra-card">
+                    <div class="obra-title">Virtudes Teologales</div>
+                    <p><strong>Fe</strong> - asentimiento a las verdades reveladas<br>
+                    <strong>Esperanza</strong> - confianza en la salvación<br>
+                    <strong>Caridad</strong> - amor a Dios y al prójimo</p>
+                </div>
+            </div>
+            
+            <h3>Tipos de Ley</h3>
+            <p>Su concepto de ley abarca cuatro tipos: ley eterna (plan divino), ley natural (participación racional en la ley eterna), ley humana (aplicación concreta de la ley natural) y ley divina positiva (revelación sobrenatural).</p>
+        </section>
+
+        <section id="politica" class="section">
+            <h2>Filosofía Política</h2>
+            <p>Aunque menos desarrollada que otras áreas, su filosofía política se basa en principios aristotélicos adaptados al contexto cristiano medieval.</p>
+            
+            <h3>Fundamentos</h3>
+            <p>El ser humano es naturalmente social, y la autoridad política tiene origen divino pero se ejerce a través de medios humanos. Esta doctrina influyó profundamente en el desarrollo de la teoría política occidental.</p>
+            
+            <h3>Formas de Gobierno</h3>
+            <div class="highlight">
+                <p>Distinguió entre diferentes formas de gobierno, mostrando preferencia por la <strong>monarquía mixta</strong> con elementos aristocráticos y democráticos, anticipando ideas que resurgerían en el constitucionalismo moderno.</p>
+            </div>
+        </section>
+
+        <section id="obras" class="section">
+            <h2>Obras Principales</h2>
+            <p>Su producción literaria fue extraordinariamente extensa, abarcando prácticamente todos los campos del saber de su época.</p>
+            
+            <div class="obras-grid">
+                <div class="obra-card">
+                    <div class="obra-title">Summa Theologica</div>
+                    <p>Su obra maestra, un manual completo de teología organizado según el esquema: Dios en sí mismo, el movimiento de las creaturas hacia Dios, y Cristo como camino de retorno a Dios.</p>
+                </div>
+                <div class="obra-card">
+                    <div class="obra-title">Summa contra Gentiles</div>
+                    <p>Apología racional del cristianismo dirigida especialmente contra los filósofos árabes, demostrando la compatibilidad entre razón y fe.</p>
+                </div>
+                <div class="obra-card">
+                    <div class="obra-title">Comentarios a Aristóteles</div>
+                    <p>Interpretaciones magistrales de la Metafísica, Ética, Política y Física aristotélicas que influyeron decisivamente en la comprensión occidental del Estagirita.</p>
+                </div>
+                <div class="obra-card">
+                    <div class="obra-title">Questiones Disputatae</div>
+                    <p>Debates académicos sobre temas específicos como la verdad, el mal, las virtudes y el alma, mostrando el método escolástico en acción.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="influencia" class="section">
+            <h2>Influencia Ejercida</h2>
+            <p>El impacto del tomismo ha sido extraordinario y duradero, extendiéndose mucho más allá de los límites de la filosofía medieval.</p>
+            
+            <h3>Reconocimiento Eclesiástico</h3>
+            <p>La Iglesia Católica, tras un período inicial de desconfianza, terminó adoptando oficialmente su sistema: fue canonizado en 1323 y declarado Doctor de la Iglesia en 1567. León XIII en la encíclica "Aeterni Patris" (1879) lo proclamó modelo de la filosofía católica.</p>
+            
+            <h3>Influencia Moderna</h3>
+            <div class="highlight">
+                <p>En el siglo XX, filósofos como <strong>Jacques Maritain, Étienne Gilson y Alasdair MacIntyre</strong> renovaron el interés por su pensamiento, aplicándolo a problemas contemporáneos de ética, política y filosofía de la religión.</p>
+            </div>
+            
+            <h3>Relevancia Contemporánea</h3>
+            <p>Su actualidad se manifiesta en debates contemporáneos sobre la fundamentación racional de la ética, la relación entre ciencia y religión, y la búsqueda de principios universales para la convivencia humana.</p>
+        </section>
+
+        <section class="section">
+            <h2>Síntesis y Valoración</h2>
+            <p>Santo Tomás logró crear un sistema de pensamiento de notable coherencia interna que integra elementos aristotélicos, patrísticos y escolásticos en una síntesis original y perdurable.</p>
+            
+            <div class="highlight">
+                <p>Su genio consistió en mantener tanto la <strong>autonomía de la razón</strong> como la <strong>necesidad de la revelación</strong>, estableciendo una armonía entre filosofía y teología que respeta la especificidad de cada disciplina.</p>
+            </div>
+            
+            <p>Su influencia perdura no solo en la tradición católica, sino en el conjunto de la cultura occidental, habiendo contribuido decisivamente a la formación del pensamiento europeo en áreas tan diversas como la metafísica, la ética, la teoría política y la filosofía del derecho.</p>
+            
+            <p>Su método de síntesis y su confianza en la capacidad de la razón para alcanzar verdades fundamentales sobre la realidad continúan siendo relevantes para el diálogo interdisciplinario actual, ofreciendo un modelo de integración del saber que trasciende las fragmentaciones académicas contemporáneas.</p>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 - Estudio del Pensamiento de Santo Tomás de Aquino</p>
+            <p><em>"Tres cosas son necesarias para la salvación del hombre: saber lo que debe creer, saber lo que debe desear, y saber lo que debe hacer."</em></p>
+        </footer>
+    </div>
+
+    <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Smooth scrolling para la navegación
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Botón scroll to top
+        window.addEventListener('scroll', function() {
+            const scrollButton = document.querySelector('.scroll-to-top');
+            if (window.pageYOffset > 300) {
+                scrollButton.classList.add('visible');
+            } else {
+                scrollButton.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Efecto parallax sutil en el header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            header.style.transform = `translateY(${rate}px)`;
+        });
+
+        // Animación de entrada para las secciones
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Las Cinco Vías de Santo Tomás de Aquino</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f8fb;
+      color: #333;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-top: 2rem;
+    }
+
+    ol {
+      line-height: 1.7;
+      padding-left: 1.2rem;
+    }
+
+    .infografia {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      position: relative;
+      padding-left: 2rem;
+      border-left: 4px solid #3498db;
+    }
+
+    .via {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      position: relative;
+    }
+
+    .via::before {
+      content: "";
+      position: absolute;
+      left: -1.6rem;
+      top: 0.5rem;
+      width: 1rem;
+      height: 1rem;
+      background: #3498db;
+      border-radius: 50%;
+      border: 3px solid white;
+      z-index: 1;
+    }
+
+    .icono {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+    }
+
+    .via-content {
+      max-width: 800px;
+    }
+
+    .via-content h3 {
+      margin: 0;
+      color: #2980b9;
+      font-size: 1.2rem;
+    }
+
+    .via-content p {
+      margin: 0.3rem 0 0;
+    }
+
+    @media (max-width: 600px) {
+      .via {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Las Cinco Vías de Santo Tomás de Aquino</h1>
+    <p>Demostraciones racionales de la existencia de Dios</p>
+  </header>
+
+  <div class="container">
+
+    <section>
+      <h2>Resumen de las Cinco Vías</h2>
+      <ol>
+        <li><strong>Movimiento:</strong> Todo lo que se mueve es movido por otro. Debe haber un Primer Motor Inmóvil: Dios.</li>
+        <li><strong>Causa eficiente:</strong> Nada es causa de sí mismo. Debe existir una Causa Primera: Dios.</li>
+        <li><strong>Posible y necesario:</strong> No todo puede ser contingente. Debe haber un ser necesario: Dios.</li>
+        <li><strong>Grados de perfección:</strong> Existen grados en los seres. Debe existir un ser sumamente perfecto: Dios.</li>
+        <li><strong>Orden del mundo:</strong> Las cosas obran con orden hacia un fin. Debe haber una inteligencia rectora: Dios.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Infografía Visual</h2>
+      <div class="infografia">
+        <div class="via">
+          <div class="icono">
+            <svg viewBox="0 0 24 24" fill="#3498db"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          </div>
+          <div class="via-content">
+            <h3>1. Movimiento</h3>
+            <p>Todo lo que se mueve es movido por otro → Primer Motor Inmóvil</p>
+          </div>
+        </div>
+
+        <div class="via">
+          <div class="icono">
+            <svg viewBox="0 0 24 24" fill="#3498db"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm10 4a8.2 8.2 0 00-.3-2l2-1.5-2-3.5-2.3 1a8.2 8.2 0 00-2-1.2L17 2h-4l-.5 2.3a8.2 8.2 0 00-2 1.2L8.2 3 6 6.5 8 8a8.2 8.2 0 000 4l-2 1.5 2 3.5 2.3-1a8.2 8.2 0 002 1.2L10 22h4l.5-2.3a8.2 8.2 0 002-1.2l2.3 1 2-3.5-2-1.5a8.2 8.2 0 00.2-2z"/></svg>
+          </div>
+          <div class="via-content">
+            <h3>2. Causa Eficiente</h3>
+            <p>Nada se causa a sí mismo → Primera Causa</p>
+          </div>
+        </div>
+
+        <div class="via">
+          <div class="icono">
+            <svg viewBox="0 0 24 24" fill="#3498db"><path d="M12 2L1 21h22L12 2zm0 3.84L19.53 19H4.47L12 5.84z"/></svg>
+          </div>
+          <div class="via-content">
+            <h3>3. Ser Necesario</h3>
+            <p>Algo debe existir necesariamente → Ser Necesario por sí mismo</p>
+          </div>
+        </div>
+
+        <div class="via">
+          <div class="icono">
+            <svg viewBox="0 0 24 24" fill="#3498db"><path d="M12 2l2.9 6.1L22 9.2l-5 4.9L18.3 22 12 18.3 5.7 22 7 14.1 2 9.2l7.1-1.1L12 2z"/></svg>
+          </div>
+          <div class="via-content">
+            <h3>4. Grados de Perfección</h3>
+            <p>Debe existir un ser máximo en perfección → Fuente de todo bien</p>
+          </div>
+        </div>
+
+        <div class="via">
+          <div class="icono">
+            <svg viewBox="0 0 24 24" fill="#3498db"><path d="M10 2H6a1 1 0 00-1 1v4h2V4h3a1 1 0 000-2zm8 20h-4a1 1 0 000 2h4a1 1 0 001-1v-4h-2v3zM4 13h16v-2H4v2z"/></svg>
+          </div>
+          <div class="via-content">
+            <h3>5. Orden del Mundo</h3>
+            <p>El orden natural indica una inteligencia → Gobernador del mundo</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Lecturas recomendadas</h2>
+      <ul>
+        <li><a href="https://www.sacred-texts.com/chr/aquinas/summa/index.htm" target="_blank">Summa Theologiae (en inglés, Sacred Texts)</a></li>
+        <li><a href="https://hjg.com.ar/sumat/index.html" target="_blank">Suma Teológica (traducción al español por P. Derisi)</a></li>
+        <li><a href="https://www.corpusthomisticum.org/sth.html" target="_blank">Corpus Thomisticum (texto latino completo)</a></li>
+      </ul>
+    </section>
+
+  </div>
+
+</body>
+</html>

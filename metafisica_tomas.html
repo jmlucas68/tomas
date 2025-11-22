@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metafísica de Santo Tomás de Aquino - Conceptos Principales</title>
+    <style>
+        :root {
+            --color-primary: #2c5aa0;
+            --color-secondary: #d4af37;
+            --color-bg: #f5f5dc;
+            --color-text: #2c3e50;
+            --color-card-bg: #ffffff;
+            --color-border: #c9b896;
+            --color-accent: #8b4513;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: var(--color-text);
+            background: linear-gradient(135deg, #f5f5dc 0%, #e8dcc0 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--color-card-bg);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1a3d7a 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            border-bottom: 5px solid var(--color-secondary);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        .infografia-section {
+            background: linear-gradient(to bottom, #faf8f3 0%, #ffffff 100%);
+            padding: 40px 30px;
+            text-align: center;
+            border-bottom: 3px solid var(--color-border);
+        }
+
+        .infografia-section h2 {
+            color: var(--color-primary);
+            font-size: 2em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .infografia-container {
+            max-width: 100%;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .infografia-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .intro {
+            background: linear-gradient(to right, #f8f6f0 0%, #ffffff 100%);
+            padding: 25px;
+            border-left: 5px solid var(--color-secondary);
+            margin-bottom: 35px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            line-height: 1.9;
+        }
+
+        h2 {
+            color: var(--color-primary);
+            font-size: 1.8em;
+            margin: 35px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--color-secondary);
+        }
+
+        h3 {
+            color: var(--color-accent);
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        h3::before {
+            content: "◆";
+            color: var(--color-secondary);
+            margin-right: 10px;
+            font-size: 0.8em;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            margin: 15px 0 20px 30px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        strong {
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .concepto-card {
+            background: linear-gradient(to right, #fdfbf7 0%, #ffffff 100%);
+            border-left: 4px solid var(--color-primary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .concepto-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        .referencias {
+            background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
+            padding: 25px;
+            margin-top: 40px;
+            border-radius: 8px;
+            border: 2px solid var(--color-border);
+        }
+
+        .referencias h2 {
+            border-bottom-color: var(--color-accent);
+        }
+
+        .referencias ol {
+            margin-left: 25px;
+        }
+
+        .referencias li {
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .referencias a {
+            color: var(--color-primary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--color-primary);
+            transition: color 0.3s ease;
+        }
+
+        .referencias a:hover {
+            color: var(--color-accent);
+            border-bottom-color: var(--color-accent);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a2533 100%);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.95em;
+        }
+
+        footer p {
+            text-align: center;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fff9e6 0%, #ffecb3 100%);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>La Metafísica de Santo Tomás de Aquino</h1>
+            <p>Conceptos Fundamentales del Pensamiento Tomista</p>
+        </header>
+
+        <div class="infografia-section">
+            <h2>Infografía Visual</h2>
+            <div class="infografia-container">
+                <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/63ce1c1e-111f-45b7-bde8-7422cd9fabde.png" alt="Infografía de la Metafísica de Santo Tomás de Aquino">
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                La infografía presentada sintetiza los principales conceptos de la metafísica tomista, una de las construcciones filosóficas más influyentes de la historia del pensamiento occidental. Santo Tomás de Aquino (1225-1274) desarrolló un sistema metafísico que armoniza la filosofía aristotélica con la teología cristiana, creando una síntesis que ha marcado profundamente la tradición filosófica.
+            </div>
+
+            <h2>Conceptos Principales de la Metafísica Tomista</h2>
+
+            <div class="concepto-card">
+                <h3>1. Ser, Esencia y Existencia</h3>
+                <p>
+                    Santo Tomás de Aquino establece una <strong>distinción fundamental</strong> entre la esencia (<span class="highlight">quid est</span> — qué es una cosa) y la existencia (<span class="highlight">esse</span> — que existe). La esencia representa lo que una cosa es, mientras que la existencia es el acto de ser. Esta distinción es crucial porque permite comprender que en las criaturas, la esencia y la existencia no son idénticas.
+                </p>
+                <p>
+                    Una cosa puede tener esencia sin existir actualmente; por ejemplo, comprendemos qué es un unicornio sin que este sea. Sin embargo, <strong>en Dios, esencia y existencia coinciden</strong> — Dios es su propio acto de ser (<span class="highlight">ipsum esse subsistens</span>). Esta es una de las innovaciones más importantes del pensamiento tomista respecto a sus predecesores.
+                </p>
+            </div>
+
+            <div class="concepto-card">
+                <h3>2. Acto y Potencia</h3>
+                <p>
+                    El binomio <strong>acto-potencia</strong> es herencia aristotélica pero profundamente desarrollado por Santo Tomás. La <strong>potencia</strong> es la capacidad de tener una perfección, mientras que el <strong>acto</strong> es la realización de esa perfección. El movimiento es el paso de la potencia al acto: una semilla es un árbol en potencia hasta que se convierte efectivamente en árbol en acto.
+                </p>
+                <p>
+                    Santo Tomás amplía esta noción: <em>con respecto al acto de ser, todos los demás principios del ente se comportan como potencia</em>. Esta teoría permite explicar el cambio, el devenir y la multiplicidad de los seres en el mundo. Dios, como acto puro, carece de toda potencialidad y es, por tanto, inmutable y perfecto.
+                </p>
+            </div>
+
+            <div class="concepto-card">
+                <h3>3. Sustancia, Forma y Materia</h3>
+                <p>
+                    La <strong>sustancia</strong> es la realidad fundamental que existe por sí misma, a diferencia de los accidentes que existen en otro. En las sustancias compuestas sensibles, <strong>forma y materia</strong> constituyen la esencia de la sustancia.
+                </p>
+                <ul>
+                    <li><strong>La materia</strong> es el principio pasivo, lo que recibe, el sustrato indeterminado</li>
+                    <li><strong>La forma</strong> es el principio activo, lo que determina y actualiza</li>
+                </ul>
+                <p>
+                    La forma es lo que hace que una cosa sea lo que es (el principio de especificación), mientras que la materia proporciona el sustrato material (el principio de individuación en las sustancias materiales). Juntas, forman el <span class="highlight">compuesto hilemórfico</span>.
+                </p>
+            </div>
+
+            <div class="concepto-card">
+                <h3>4. Las Cuatro Causas</h3>
+                <p>
+                    Santo Tomás adopta la teoría aristotélica de las cuatro causas, fundamentales para comprender cualquier ente:
+                </p>
+                <ul>
+                    <li><strong>Causa Material</strong>: aquello de que está hecha una cosa (de qué está compuesta)</li>
+                    <li><strong>Causa Formal</strong>: lo que determina qué es una cosa (su esencia o naturaleza)</li>
+                    <li><strong>Causa Eficiente</strong>: el agente o principio que la produce (quién la hace)</li>
+                    <li><strong>Causa Final</strong>: el propósito o para qué de una cosa (su fin o teleología)</li>
+                </ul>
+                <p>
+                    Esta doctrina causal es esencial en la metafísica tomista y en sus famosas <em>cinco vías</em> para demostrar la existencia de Dios, donde se remonta de los efectos a sus causas hasta llegar a una Causa Primera.
+                </p>
+            </div>
+
+            <div class="concepto-card">
+                <h3>5. Dios como Ser Necesario</h3>
+                <p>
+                    Una conclusión fundamental de la metafísica tomista es que existe un <strong>ser necesario</strong> — Dios. Las cosas creadas son <em>contingentes</em> (su existencia depende de otro), reciben su existencia de otra sustancia cuya esencia consiste en existir.
+                </p>
+                <p>
+                    Dios es <span class="highlight">acto puro</span> (<em>actus purus</em>), sin potencialidad alguna, y posee potencia activa infinita — la capacidad de producir todas las cosas. Como Ser Necesario, Dios no puede no existir, mientras que todos los demás seres son contingentes y dependen de Él para su existencia. Esta es la base metafísica de la teología natural tomista.
+                </p>
+            </div>
+
+            <div class="concepto-card">
+                <h3>6. Analogía del Ser</h3>
+                <p>
+                    Santo Tomás adopta la interpretación <strong>analógica del ser</strong>: todas las sustancias reciben la existencia de Dios, por lo que el ser no les pertenece propiamente sino por analogía con Dios. El ser se predica de manera análoga, no unívoca ni equívoca.
+                </p>
+                <p>
+                    Esto significa que cuando decimos que Dios "es" y que una criatura "es", no usamos el término "ser" en el mismo sentido (univocidad) ni en sentidos completamente diferentes (equivocidad), sino de manera <em>análoga</em>. Dios es ser por esencia, las criaturas por participación. De igual modo, todas las demás perfecciones (bondad, sabiduría, poder) se predican de manera análoga.
+                </p>
+            </div>
+
+            <div class="referencias">
+                <h2>Referencias</h2>
+                <ol>
+                    <li>Webdianoia - <a href="https://www.webdianoia.com/medieval/aquinate/aquino_meta_2.htm" target="_blank" rel="noopener noreferrer">Metafísica de Tomás de Aquino: La teoría de la esencia y la existencia</a></li>
+                    <li>Filosofía y Educación - <a href="https://www.filosofiayeducacion.es/TEMA-5-LA-ESTRUCTURA-METAFISICA-DEL-ENTE-II-ACTO-Y-POTENCIA-QUE-ES-EL-TIEMPO-C-217.html" target="_blank" rel="noopener noreferrer">La estructura metafísica del ente: Acto y Potencia</a></li>
+                    <li>Webdianoia - <a href="https://www.webdianoia.com/medieval/aquinate/aquino_meta.htm" target="_blank" rel="noopener noreferrer">Metafísica de Tomás de Aquino: Los elementos aristotélicos</a></li>
+                    <li>Diógenes Hoy - <a href="https://diogeneshoy.com/filosofia-medieval/filosofia-de-tomas-de-aquino/" target="_blank" rel="noopener noreferrer">Conceptos básicos de la filosofía de Tomás de Aquino</a></li>
+                    <li>Tomás de Aquino (org) - <a href="https://tomasdeaquino.org/capitulo-vii-en-dios-hay-potencia-activa/" target="_blank" rel="noopener noreferrer">En Dios hay potencia activa</a></li>
+                </ol>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Filósofos - Historia de la Filosofía | Santo Tomás de Aquino</p>
+        </footer>
+    </div>
+</body>
+</html>
+
